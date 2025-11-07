@@ -54,10 +54,10 @@ pipeline {
                         echo "Build Number: $BUILD_NUMBER"
                         
                         # Update deployment file with new image
-                        sed -i "s#image:.*#image: 157664038953.dkr.ecr.us-east-1.amazonaws.com/frontend:$BUILD_NUMBER#g" argocd/frontend/argocd-frontend.yaml
+                        sed -i "s#image:.*#image: 157664038953.dkr.ecr.us-east-1.amazonaws.com/frontend:$BUILD_NUMBER#g" argocd/frontend/argocd-frontend.yml
                         
                         # Commit and push changes
-                        git add argocd/frontend/argocd-frontend.yaml
+                        git add argocd/frontend/argocd-frontend.yml
                         git commit -m "Update frontend deployment image to version $BUILD_NUMBER"
                         git push https://${git_token}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                     '''
