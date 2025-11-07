@@ -4,7 +4,7 @@ const mysql = require('mysql2/promise');
 (async () => {
   const db = JSON.parse(fs.readFileSync('db.json'));
   const conn = await mysql.createConnection({
-    host: 'sonal.cy7uw4uu0e0x.us-east-1.rds.amazonaws.com',
+    host: 'database-1.ckn4c840kn2f.us-east-1.rds.amazonaws.com',
     user: 'admin',
     password: 'Sonal45815',
     database: 'react_node_app'
