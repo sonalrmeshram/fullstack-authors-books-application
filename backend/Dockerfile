@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 80
 
-CMD ["sh", "-c", "node migrate.cjs && pm2-runtime start server.js --name backend-api"]
+CMD ["pm2-runtime", "start", "server.js", "--name", "backend-api"]
