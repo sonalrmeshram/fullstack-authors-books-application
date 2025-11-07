@@ -8,8 +8,9 @@ RUN npm run build
 FROM node:18
 WORKDIR /app
 
-# Install serve to host static files
+# Install serve and mysql2 for migration
 RUN npm install -g serve
+RUN npm install mysql2
 
 # Copy built files
 COPY --from=build /app/dist/ /var/www/html/
